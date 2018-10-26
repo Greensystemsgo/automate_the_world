@@ -14,7 +14,7 @@ eula --agreed
 ignoredisk --only-use=vda
 reboot
 
-bootloader --location=mbr --append=" crashkernel=auto"
+bootloader --location=mbr --append=" crashkernel=auto" biosdevname=1
 zerombr
 clearpart --all --initlabel
 part swap --asprimary --fstype="swap" --size=1024

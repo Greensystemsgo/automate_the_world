@@ -14,11 +14,11 @@ eula --agreed
 ignoredisk --only-use=sda
 reboot
 
-bootloader --location=mbr --append=" crashkernel=auto"
+bootloader --location=mbr --append=" crashkernel=auto" biosdevname=1
 zerombr
 clearpart --all --initlabel
 part swap --asprimary --fstype="swap" --size=1024
-part /boot --fstype xfs --size=200
+part /boot --fstype xfs --size=500
 part pv.01 --size=1 --grow
 volgroup vg_root pv.01
 logvol / --fstype xfs --name=root --vgname=vg_root --size=5120
