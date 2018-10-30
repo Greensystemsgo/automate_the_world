@@ -6,7 +6,7 @@
 
 install
 lang en_US.UTF-8
-keyboard --vckeymap=us --xlayouts='us'
+keyboard --vckeymap='us' --xlayouts='us'
 timezone America/Phoenix --isUtc
 auth --useshadow --passalgo=sha512 			# CIS 5.3.4
 firewall --enabled
@@ -15,7 +15,7 @@ eula --agreed
 ignoredisk --only-use=sda
 reboot
 
-bootloader --location=mbr --append=" crashkernel=auto" biosdevname=1
+bootloader --location=mbr --append="crashkernel=auto biosdevname=1"
 zerombr
 clearpart --all --initlabel
 part swap --asprimary --fstype="swap" --size=1024
