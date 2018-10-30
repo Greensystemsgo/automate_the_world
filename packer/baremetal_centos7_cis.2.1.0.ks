@@ -38,14 +38,6 @@ logvol /home --vgname vg_root --name home --size=1024 --grow --fsoptions="nodev"
 rootpw --iscrypted $6$ProFartSmeller69$Vluo/OPqXfKC81l6Kr1iBIWqcoSVpj.FKNMOvzvY/k7kc77zx9mtxoq7JN9Xz.DB.ZpGHsTJJY2HuS3aKNp0D0
 #Password is Password123
 
-#user add
-useradd gsg
-mkdir -p /home/gsg/.ssh
-echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDO5SDjBVgyZRo9Ie3jae81kcSHBmDL4QjoaFYmRpeiqo7NZkegpkC+nQRn4PHQir5pxZU3ix2JxxoxPRD0n2gNwSS0F3z/Y57bVzVbTYhXcA/RR9TqCbfOkLK/PLofC/OXZyAwi2i0ZH/wnA3CETq5uj/i6aITIWlgij+Et1gOnhBjxmALKTwgqfH+8H/gGaH3si8NvZASjPbq/18SLZWSfM5DBsMf/ma4dTxMGtwHDV7DzpS1QCGxAFL+sdmdkQ+8qa3Mk2pRqt6GoliVZlc9Yn5Dsbgx2aTzYfguUGFHv8RPjoLnDTVBpOPxeXf8ODMOYS7LfbD5aT+5Aa1g4CkERnFfvkV5vLj3bqpNDLaGiWqnp/7af0CDefR1yB+BvlZlpKgP/IkR0XmnFyQK1Q24wXZeGHw6+t7oTl4dt1Kx476la1HJGCcF/w2Zls6e0hHkLp/FAwx3imJ3Wf7WXlAGPojt+lVRYsIQTFClqPwvRwkGWjf0Dl7U7AzAGw55wqC5f+sS08bz5mK5dNXNnbm7tlMnNxHLqCuYmk/3ZXMOh2m8x/6uu6g6RTxalenDUgBoS3p5VyouWqqhQE84YJwKQ4xDDoYOiL1Yln2OfNqBRRNFaEj30HYxG4VPpcynKQD4cpO8MdDkIUFWlzJ4VrDaTYugE0Z3XN8/PTzUK/W6kQ==' > /home/gsg/.ssh/authorized_keys
-chown -R gsg:gsg /home/gsg
-chmod 0600 /home/gsg/.ssh/authorized_keys
-chmod 0700 /home/gsg/.ssh
-
 cdrom
 
 %packages --ignoremissing
@@ -405,5 +397,13 @@ chown root:root /etc/gshadow
 echo "0 5 * * * /usr/sbin/aide --check" >> /var/spool/cron/root
 #Initialise last so it doesn't pick up changes made by the post-install of the KS
 /usr/sbin/aide --init -B 'database_out=file:/var/lib/aide/aide.db.gz'
+
+#user add
+useradd gsg
+mkdir -p /home/gsg/.ssh
+echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDO5SDjBVgyZRo9Ie3jae81kcSHBmDL4QjoaFYmRpeiqo7NZkegpkC+nQRn4PHQir5pxZU3ix2JxxoxPRD0n2gNwSS0F3z/Y57bVzVbTYhXcA/RR9TqCbfOkLK/PLofC/OXZyAwi2i0ZH/wnA3CETq5uj/i6aITIWlgij+Et1gOnhBjxmALKTwgqfH+8H/gGaH3si8NvZASjPbq/18SLZWSfM5DBsMf/ma4dTxMGtwHDV7DzpS1QCGxAFL+sdmdkQ+8qa3Mk2pRqt6GoliVZlc9Yn5Dsbgx2aTzYfguUGFHv8RPjoLnDTVBpOPxeXf8ODMOYS7LfbD5aT+5Aa1g4CkERnFfvkV5vLj3bqpNDLaGiWqnp/7af0CDefR1yB+BvlZlpKgP/IkR0XmnFyQK1Q24wXZeGHw6+t7oTl4dt1Kx476la1HJGCcF/w2Zls6e0hHkLp/FAwx3imJ3Wf7WXlAGPojt+lVRYsIQTFClqPwvRwkGWjf0Dl7U7AzAGw55wqC5f+sS08bz5mK5dNXNnbm7tlMnNxHLqCuYmk/3ZXMOh2m8x/6uu6g6RTxalenDUgBoS3p5VyouWqqhQE84YJwKQ4xDDoYOiL1Yln2OfNqBRRNFaEj30HYxG4VPpcynKQD4cpO8MdDkIUFWlzJ4VrDaTYugE0Z3XN8/PTzUK/W6kQ==' > /home/gsg/.ssh/authorized_keys
+chown -R gsg:gsg /home/gsg
+chmod 0600 /home/gsg/.ssh/authorized_keys
+chmod 0700 /home/gsg/.ssh
 
 %end
