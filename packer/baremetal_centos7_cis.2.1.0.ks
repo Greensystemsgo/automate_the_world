@@ -1,8 +1,8 @@
-
 #CIS - CentOS 7 Benchmark (v2.1.1) - Updated by Naing Ye Minn
 #Copyright (c) 2015, Ross Hamilton. All rights reserved.
 #Licenced under the BSD Licence See LICENCE file for details
 
+#Frama.link shortened URL for this RAW kickstart https://frama.link/QVtQ99yV
 install
 lang en_US.UTF-8
 keyboard --vckeymap=us --xlayouts='us'
