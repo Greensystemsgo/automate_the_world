@@ -157,6 +157,8 @@ ln -s multi-user.target default.target
 echo "ALL: ALL" >> /etc/hosts.deny			# CIS 3.4.3
 chown root:root /etc/hosts.deny				# CIS 3.4.5
 chmod 644 /etc/hosts.deny				# CIS 3.4.5
+echo "sshd: 10.42. : allow" >> /etc/hosts.allow         # This MUST be customized for your enviroment
+
 
 chown root:root /etc/rsyslog.conf
 chmod 600 /etc/rsyslog.conf
